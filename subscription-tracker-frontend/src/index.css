@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", "Avenir Next", sans-serif;
+  color: #19332d;
+  background: #f2f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color-scheme: light;
+
+  --ink: #19332d;
+  --muted: #74817a;
+  --line: #dce4dc;
+  --paper: #fbfcf8;
+  --forest: #173a32;
+  --leaf: #cfe881;
+  --coral: #e77b63;
+  --blue: #83b8c7;
+  --mono: "DM Mono", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #6c9c74;
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+::selection {
+  color: var(--forest);
+  background: var(--leaf);
+}
