@@ -1,0 +1,245 @@
+.subs {
+  margin-top: 46px;
+  padding-top: 27px;
+  border-top: 1px solid var(--line);
+}
+
+.subs-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 19px;
+}
+
+.subs-kicker,
+.subs-count {
+  margin: 0 0 8px;
+  color: #718178;
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.subs-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.subs-count {
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+
+.subs-form {
+  display: grid;
+  grid-template-columns: minmax(150px, 2fr) minmax(110px, 1fr) repeat(2, minmax(115px, 1fr));
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgba(251, 252, 248, 0.84);
+}
+
+.subs-field {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+  color: #51665a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.subs-field input,
+.subs-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid #d5ded5;
+  border-radius: 3px;
+  color: var(--ink);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.subs-field select {
+  text-transform: capitalize;
+}
+
+.subs-date-field {
+  grid-column: span 2;
+}
+
+.subs-add-button,
+.subs-pay-button,
+.subs-delete-button {
+  min-height: 39px;
+  padding: 0 14px;
+  border: 1px solid var(--forest);
+  border-radius: 3px;
+  color: #f7f9f3;
+  background: var(--forest);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 130ms ease, border-color 130ms ease;
+}
+
+.subs-add-button:hover:not(:disabled),
+.subs-pay-button:hover:not(:disabled) {
+  border-color: #28594c;
+  background: #28594c;
+}
+
+.subs-add-button:disabled,
+.subs-pay-button:disabled,
+.subs-delete-button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.subs-empty,
+.subs-status {
+  margin: 0;
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.subs-error {
+  margin: 0 0 15px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--coral);
+  color: #8f382d;
+  background: #fff0eb;
+  font-size: 13px;
+}
+
+.subs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subs-item {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.subs-main {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.subs-name-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.subs-name-line strong {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subs-amount {
+  color: #53685c;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.subs-meta,
+.subs-due {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  color: #718178;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.subs-meta i,
+.subs-due i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #a4aea5;
+}
+
+.subs-due.overdue {
+  color: #b24e3a;
+  font-weight: 600;
+}
+
+.subs-due.overdue i {
+  background: var(--coral);
+}
+
+.subs-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.subs-delete-button {
+  border-color: #d7a49a;
+  color: #a14c3e;
+  background: transparent;
+}
+
+.subs-delete-button:hover:not(:disabled) {
+  border-color: var(--coral);
+  background: #fff0eb;
+}
+
+@media (max-width: 760px) {
+  .subs-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .subs-name-field,
+  .subs-date-field {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .subs-form {
+    padding: 13px;
+  }
+
+  .subs-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .subs-actions {
+    width: 100%;
+  }
+
+  .subs-actions button {
+    flex: 1;
+  }
+}

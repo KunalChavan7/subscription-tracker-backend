@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { DEFAULT_DAYS } = require("../utils/reminderDays");
 
 const userSchema = new mongoose.Schema(
   {
@@ -12,6 +13,10 @@ const userSchema = new mongoose.Schema(
     },
     passwordHash: { type: String, required: true },
     plan: { type: String, enum: ["free", "pro"], default: "free" },
+    reminderPrefs: {
+      enabled: { type: Boolean, default: true },
+      days: { type: [Number], default: () => [...DEFAULT_DAYS] },
+    },
   },
   { timestamps: true }
 );

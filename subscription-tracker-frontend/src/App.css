@@ -336,6 +336,18 @@
   font-size: 13px;
 }
 
+.settings-nav {
+  color: #315d4a;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.settings-nav:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .logout-button {
   padding: 8px 0 8px 15px;
   border: 0;

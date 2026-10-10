@@ -3,6 +3,7 @@ import { AuthProvider } from "./AuthContext";
 import { useAuth } from "./useAuth";
 import AuthPage from "./pages/AuthPage";
 import Dashboard from "./pages/Dashboard";
+import Settings from "./pages/Settings";
 import "./App.css";
 
 function Protected({ children }) {
@@ -18,6 +19,14 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<AuthPage mode="login" />} />
           <Route path="/register" element={<AuthPage mode="register" />} />
+          <Route
+            path="/settings"
+            element={
+              <Protected>
+                <Settings />
+              </Protected>
+            }
+          />
           <Route
             path="/"
             element={

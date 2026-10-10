@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { api } from "../api";
 import { useAuth } from "../useAuth";
+import SubscriptionsSection from "./SubscriptionsSection";
 
 const money = new Intl.NumberFormat("en-IN", {
   style: "currency",
@@ -14,6 +16,16 @@ export default function Dashboard() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
+  const loadSummary = useCallback(async () => {
+    try {
+      setSummary(await api("/dashboard/summary"));
+      setError("");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
   useEffect(() => {
     let active = true;
     api("/dashboard/summary")
@@ -47,6 +59,7 @@ export default function Dashboard() {
         </a>
         <div className="account-actions">
           <span className="account-name">{user.name}</span>
+          <Link className="settings-nav" to="/settings">Settings</Link>
           <button className="logout-button" onClick={logout} type="button">Log out</button>
         </div>
       </header>
@@ -86,6 +99,7 @@ export default function Dashboard() {
                 </div>
               </section>
             )}
+            <SubscriptionsSection onChange={loadSummary} />
           </>
         ) : null}
       </main>
